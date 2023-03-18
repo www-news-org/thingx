@@ -27,5 +27,28 @@
   <ins data-ad-client="ca-pub-4676533344420647" data-ad-slot="5741144487"></ins>
   <p class="adsense__loading"><span>Loading&hellip;</span></p>
 </div>
+
+<script>
+// vanilla
+var instance = new adsenseLoader( '.adsense',
+{
+    onLoad: function( ad )
+    {
+        if( ad.classList )
+            ad.classList.add( 'adsense--loaded' ); // IE 10+
+        else
+            ad.className += ' ' + 'adsense--loaded'; // IE 8-9
+    }   
+});
+ 
+// jQuery
+$( '.adsense' ).adsenseLoader(
+{
+    onLoad: function( $ad )
+    {
+        $ad.addClass( 'adsense--loaded' )
+    }
+});
+</script>
 </body>
 </html>
